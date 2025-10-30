@@ -1,0 +1,8 @@
+{
+  "collectionName": "components_layout_intelligence_grids",
+  "info": { "displayName": "Intelligence Grid", "icon": "blocks" },
+  "attributes": {
+    "title": { "type": "string" },
+    "cards": { "type": "component", "repeatable": true, "component": "shared.card-item" }
+  }
+}

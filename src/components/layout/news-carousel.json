@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_layout_news_carousels",
+  "info": { "displayName": "News Carousel", "icon": "carousel" },
+  "attributes": {
+    "title": { "type": "string" },
+    "mode": { "type": "enumeration", "enum": ["latest", "manual"], "default": "latest" },
+    "limit": { "type": "integer", "default": 6 }
+  }
+}

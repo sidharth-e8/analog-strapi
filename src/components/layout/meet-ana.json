@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_layout_meet_ana",
+  "info": { "displayName": "Meet Ana", "icon": "user" },
+  "attributes": {
+    "title": { "type": "string" },
+    "description": { "type": "text" },
+    "image": { "type": "media", "multiple": false },
+    "stats": { "type": "component", "repeatable": true, "component": "shared.stat-item" }
+  }
+}

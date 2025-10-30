@@ -1,0 +1,8 @@
+{
+  "collectionName": "components_layout_value_grids",
+  "info": { "displayName": "Value Grid", "icon": "checkbox" },
+  "attributes": {
+    "heading": { "type": "string" },
+    "values": { "type": "component", "repeatable": true, "component": "shared.value-item" }
+  }
+}

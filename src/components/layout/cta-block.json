@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_layout_cta_blocks",
+  "info": { "displayName": "CTA Block", "icon": "megaphone" },
+  "attributes": {
+    "title": { "type": "string" },
+    "backgroundImage": { "type": "media", "multiple": false },
+    "button": { "type": "component", "repeatable": false, "component": "shared.link" }
+  }
+}

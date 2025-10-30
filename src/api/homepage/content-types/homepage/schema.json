@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": { "singularName": "homepage", "pluralName": "homepages", "displayName": "Homepage" },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "layout.banner-section",
+        "layout.feature-grid",
+        "layout.intelligence-grid",
+        "layout.meet-ana",
+        "layout.cta-block",
+        "layout.testimonial-slider",
+        "layout.news-carousel",
+        "layout.image-text"
+      ]
+    },
+    "featuredTestimonials": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::testimonial.testimonial"
+    },
+    "featuredArticles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::news-article.news-article"
+    },
+    "partnerLogos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::partner.partner"
+    },
+    "seo": { "type": "component", "repeatable": false, "component": "shared.seo" }
+  }
+}

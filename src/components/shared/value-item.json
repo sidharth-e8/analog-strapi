@@ -1,0 +1,8 @@
+{
+  "collectionName": "components_shared_value_items",
+  "info": { "displayName": "Value Item", "icon": "bulletList" },
+  "attributes": {
+    "title": { "type": "string" },
+    "description": { "type": "text" }
+  }
+}

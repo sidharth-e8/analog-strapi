@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_layout_image_texts",
+  "info": { "displayName": "Image + Text", "icon": "alignLeft" },
+  "attributes": {
+    "heading": { "type": "string" },
+    "content": { "type": "richtext" },
+    "image": { "type": "media", "multiple": false },
+    "imagePosition": { "type": "enumeration", "enum": ["left", "right"], "default": "left" }
+  }
+}

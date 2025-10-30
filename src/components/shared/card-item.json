@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_shared_card_items",
+  "info": { "displayName": "Card Item", "icon": "grid" },
+  "attributes": {
+    "title": { "type": "string" },
+    "description": { "type": "text" },
+    "image": { "type": "media", "multiple": false },
+    "link": { "type": "component", "repeatable": false, "component": "shared.link" }
+  }
+}

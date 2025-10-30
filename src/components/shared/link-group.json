@@ -1,0 +1,8 @@
+{
+  "collectionName": "components_shared_link_groups",
+  "info": { "displayName": "Link Group", "icon": "layer" },
+  "attributes": {
+    "groupTitle": { "type": "string" },
+    "links": { "type": "component", "repeatable": true, "component": "shared.link" }
+  }
+}

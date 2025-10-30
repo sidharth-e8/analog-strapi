@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_shared_seos",
+  "info": { "displayName": "SEO", "icon": "search" },
+  "attributes": {
+    "metaTitle": { "type": "string", "required": false, "maxLength": 60 },
+    "metaDescription": { "type": "text", "required": false, "maxLength": 160 },
+    "metaImage": { "type": "media", "multiple": false, "required": false },
+    "keywords": { "type": "string", "required": false }
+  }
+}

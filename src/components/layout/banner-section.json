@@ -1,0 +1,52 @@
+{
+  "collectionName": "components_layout_banner_sections",
+  "info": {
+    "displayName": "Banner Section",
+    "icon": "landscape",
+    "description": "Page banner supporting image, video, or external link with optional button."
+  },
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "subheading": {
+      "type": "text"
+    },
+    "mediaType": {
+      "type": "enumeration",
+      "enum": ["image", "video", "external_video"],
+      "default": "image",
+      "required": true
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false
+    },
+    "backgroundVideo": {
+      "type": "media",
+      "multiple": false,
+      "required": false
+    },
+    "videoUrl": {
+      "type": "string",
+      "required": false,
+      "regex": "^(https?:\\/\\/)?([\\w.-]+)\\.([a-z\\.]{2,6})([\\/\\w .-]*)*\\/?$"
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": "#00000080"
+    },
+    "alignment": {
+      "type": "enumeration",
+      "enum": ["left", "center", "right"],
+      "default": "center"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link"
+    }
+  }
+}
