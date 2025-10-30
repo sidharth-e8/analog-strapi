@@ -1,5 +1,18 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface LayoutAllNewsGrid extends Struct.ComponentSchema {
+  collectionName: 'components_layout_all_news_grids';
+  info: {
+    displayName: 'All News Grid';
+    icon: 'grid';
+  };
+  attributes: {
+    enablePagination: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
+    heading: Schema.Attribute.String & Schema.Attribute.DefaultTo<'All News'>;
+  };
+}
+
 export interface LayoutBannerSection extends Struct.ComponentSchema {
   collectionName: 'components_layout_banner_sections';
   info: {
@@ -92,6 +105,21 @@ export interface LayoutJoinUs extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutLatestNews extends Struct.ComponentSchema {
+  collectionName: 'components_layout_latest_news';
+  info: {
+    displayName: 'Latest News';
+    icon: 'newspaper';
+  };
+  attributes: {
+    articles: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::news-article.news-article'
+    >;
+    heading: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Latest'>;
+  };
+}
+
 export interface LayoutMeetAna extends Struct.ComponentSchema {
   collectionName: 'components_layout_meet_ana';
   info: {
@@ -117,6 +145,23 @@ export interface LayoutNewsCarousel extends Struct.ComponentSchema {
     mode: Schema.Attribute.Enumeration<['latest', 'manual']> &
       Schema.Attribute.DefaultTo<'latest'>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface LayoutPartnerCarousel extends Struct.ComponentSchema {
+  collectionName: 'components_layout_partner_carousels';
+  info: {
+    description: 'Displays partner logos pulled from the Partner collection.';
+    displayName: 'Partner Carousel';
+    icon: 'handshake';
+  };
+  attributes: {
+    heading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Our Partners'>;
+    layoutStyle: Schema.Attribute.Enumeration<['carousel', 'grid']> &
+      Schema.Attribute.DefaultTo<'carousel'>;
+    partners: Schema.Attribute.Relation<'oneToMany', 'api::partner.partner'>;
+    showHeading: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
   };
 }
 
@@ -232,14 +277,17 @@ export interface SharedValueItem extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'layout.all-news-grid': LayoutAllNewsGrid;
       'layout.banner-section': LayoutBannerSection;
       'layout.cta-block': LayoutCtaBlock;
       'layout.feature-grid': LayoutFeatureGrid;
       'layout.image-text': LayoutImageText;
       'layout.intelligence-grid': LayoutIntelligenceGrid;
       'layout.join-us': LayoutJoinUs;
+      'layout.latest-news': LayoutLatestNews;
       'layout.meet-ana': LayoutMeetAna;
       'layout.news-carousel': LayoutNewsCarousel;
+      'layout.partner-carousel': LayoutPartnerCarousel;
       'layout.testimonial-slider': LayoutTestimonialSlider;
       'layout.value-grid': LayoutValueGrid;
       'shared.card-item': SharedCardItem;

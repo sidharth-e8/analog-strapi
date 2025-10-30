@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_layout_latest_news",
+  "info": { "displayName": "Latest News", "icon": "newspaper" },
+  "attributes": {
+    "heading": { "type": "string", "default": "Latest" },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::news-article.news-article"
+    }
+  }
+}
