@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_layout_partner_carousels",
+  "info": {
+    "displayName": "Partner Carousel",
+    "icon": "handshake",
+    "description": "Displays partner logos pulled from the Partner collection."
+  },
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Our Partners"
+    },
+    "partners": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::partner.partner"
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "layoutStyle": {
+      "type": "enumeration",
+      "enum": ["carousel", "grid"],
+      "default": "carousel"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "newsroom_pages",
+  "info": {
+    "singularName": "newsroom-page",
+    "pluralName": "newsroom-pages",
+    "displayName": "Newsroom Page"
+  },
+  "options": { "draftAndPublish": true },
+  "pluginOptions": { "i18n": { "localized": true } },
+  "attributes": {
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "layout.banner-section",
+        "layout.partner-carousel",
+        "layout.latest-news",
+        "layout.all-news-grid"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo"
+    }
+  }
+}

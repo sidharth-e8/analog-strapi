@@ -1,0 +1,8 @@
+{
+  "collectionName": "components_layout_all_news_grids",
+  "info": { "displayName": "All News Grid", "icon": "grid" },
+  "attributes": {
+    "heading": { "type": "string", "default": "All News" },
+    "enablePagination": { "type": "boolean", "default": true }
+  }
+}
