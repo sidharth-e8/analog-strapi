@@ -137,11 +137,23 @@ export interface LayoutMeetAna extends Struct.ComponentSchema {
 export interface LayoutNewsCarousel extends Struct.ComponentSchema {
   collectionName: 'components_layout_news_carousels';
   info: {
+    description: 'Displays latest or manually selected news articles.';
     displayName: 'News Carousel';
-    icon: 'carousel';
   };
   attributes: {
-    limit: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<6>;
+    articles: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::news-article.news-article'
+    >;
+    count: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 12;
+          min: 1;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<3>;
     mode: Schema.Attribute.Enumeration<['latest', 'manual']> &
       Schema.Attribute.DefaultTo<'latest'>;
     title: Schema.Attribute.String;

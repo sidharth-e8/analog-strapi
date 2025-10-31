@@ -1,9 +1,29 @@
 {
   "collectionName": "components_layout_news_carousels",
-  "info": { "displayName": "News Carousel", "icon": "carousel" },
+  "info": {
+    "displayName": "News Carousel",
+    "description": "Displays latest or manually selected news articles."
+  },
+  "options": {},
   "attributes": {
-    "title": { "type": "string" },
-    "mode": { "type": "enumeration", "enum": ["latest", "manual"], "default": "latest" },
-    "limit": { "type": "integer", "default": 6 }
+    "title": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "enumeration",
+      "enum": ["latest", "manual"],
+      "default": "latest"
+    },
+    "count": {
+      "type": "integer",
+      "default": 3,
+      "min": 1,
+      "max": 12
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::news-article.news-article"
+    }
   }
 }
